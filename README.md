@@ -1,23 +1,60 @@
-# Sistema Bancário Simples em Python
+# Sistema Bancário Simulado em Python
 
-## Introdução
+## Descrição Geral
 
-Este projeto é um sistema bancário simples desenvolvido em Python, destinado a simular as principais operações realizadas em uma conta bancária, como depósitos, saques e consultas ao extrato. Ele foi projetado para ser uma ferramenta educacional, demonstrando conceitos fundamentais de programação, como estruturas de controle de fluxo, manipulação de strings, e trabalho com listas e variáveis.
+Este projeto simula um sistema bancário básico, permitindo a criação de contas para clientes, realização de transações como depósitos e saques, e manutenção de um histórico de transações. Foi desenvolvido como uma ferramenta educacional para demonstrar conceitos de Programação Orientada a Objetos (POO), como classes, herança, métodos abstratos e interfaces. Este projeto foi uma oportunidade valiosa para praticar e aprofundar meus conhecimentos em POO.
 
-## Características Principais
+## Motivação e Objetivos
 
-- **Depósito**: Permite ao usuário depositar quantias em sua conta, com validação para garantir que o valor seja positivo.
-- **Saque**: Suporta saques, incluindo um limite diário de saques e um limite máximo por saque. Verifica se o saldo é suficiente antes de processar o saque.
-- **Extrato**: Fornece uma lista de todas as transações realizadas, incluindo detalhes de cada depósito e saque.
-- **Interface de Menu**: Um menu interativo permite ao usuário selecionar a operação desejada, facilitando a navegação pelo sistema.
+### Treinamento em POO
 
-## Como Usar
+A principal motivação para desenvolver este sistema bancário foi treinar em Programação Orientada a Objetos. A POO é uma abordagem de programação que utiliza "objetos" – instâncias de classes – para diseñar aplicativos e programas de software. Ao trabalhar neste projeto, tive a chance de:
 
-1. **Iniciar o Programa**: Execute o script Python para iniciar o sistema bancário.
-2. **Selecionar Operação**: Digite a letra correspondente à operação desejada no menu apresentado:
-   - `d` para Depósito
-   - `s` para Sacar
-   - `e` para Extrato
-   - `q` para Sair
-3. **Executar Transações**: Siga as instruções na tela para completar a transação selecionada.
-4. **Repetir o Processo**: Continue selecionando operações até decidir sair do programa digitando `q`.
+- Entender melhor os conceitos fundamentais de POO, como encapsulamento, herança e polimorfismo.
+- Praticar a criação de classes e objetos, bem como a implementação de métodos e propriedades.
+- Desenvolver habilidades em design de classes e relações entre elas, como associação e composição.
+- Implementar padrões de projeto e princípios SOLID, embora de forma simplificada, para melhorar a qualidade do código.
+
+### Aprendizagem Prática
+
+Além de treinar em POO, este projeto também serviu como uma excelente oportunidade para aprender sobre:
+
+- Manipulação de dados e estruturas de dados.
+- Tratamento de erros e exceções.
+- Desenvolvimento de interfaces de usuário interativas.
+- Teste e depuração de código.
+
+## Classes Principais
+
+### Cliente
+Representa um cliente genérico no banco, com um endereço e uma lista de contas associadas.
+
+### PessoaFisica
+Herda de `Cliente`, adicionando atributos específicos para pessoas físicas, como CPF, nome e data de nascimento.
+
+### Conta
+Base para contas bancárias, armazenando saldo, número da conta, agência, cliente titular e histórico de transações.
+
+### ContaCorrente
+Herda de `Conta`, adicionando limites específicos para contas correntes.
+
+### Historico
+Gerencia o histórico de transações de uma conta.
+
+### Transacao, Saque, Deposito
+`Transacao` é uma classe abstrata para transações, enquanto `Saque` e `Deposito` representam tipos específicos de transações.
+
+## Funcionalidades Principais
+
+### Menu Interativo
+Permite ao usuário escolher entre várias operações, como realizar um saque, depósito, visualizar o extrato ou criar novos clientes e contas.
+
+### Transações
+Inclui suporte para saques e depósitos, com validações de saldo e limites específicos para contas correntes.
+
+### Histórico de Transações
+Cada transação é registrada em um histórico, permitindo o acompanhamento das atividades financeiras de um cliente.
+
+## Execução Principal
+
+O programa inicializa listas para clientes e contas, e entra em um loop que interage com o usuário através de um menu, chamando funções apropriadas para executar as operações escolhidas.
